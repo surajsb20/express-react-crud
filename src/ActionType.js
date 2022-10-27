@@ -1,0 +1,9 @@
+const ActionType={
+    SET_STUDENT_LIST:"SET_STUDENT_LIST",
+    EDIT_STUDENT:"EDIT_STUDENT",
+    EDIT_STUDENT_SAVE:"EDIT_STUDENT_SAVE",
+    DELETE_STUDENT:"DELETE_STUDENT",
+    
+}
+
+export default ActionType;

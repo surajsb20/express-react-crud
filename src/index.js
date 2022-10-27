@@ -3,12 +3,34 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import Store from './store';
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
+import router from './router';
+
+import AddStudent from './component/AddStudent';
+import StudentList from './component/StudentList';
+import EditStudent from './component/EditStudent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
+  
+<Provider store={Store}>
+
+<React.StrictMode>
+
+    <BrowserRouter >
+  <App />
+  <Routes>
+    <Route  path="/" element={<StudentList/>} />
+    
+    <Route  path="/addstudent" element={<AddStudent/>} />
+    <Route path="/editstudent/:id" element={<EditStudent/>}/>
+  </Routes>
+    </BrowserRouter>
   </React.StrictMode>
+  
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
